@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    name: web
+  name: web
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: web
+    spec:
+      containers:
+      - image: asia.gcr.io/iwanariy-corp/web:v1
+        name: web
+        ports:
+        - containerPort: 8080
+          name: http
+          protocol: TCP
